@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="mmaldonadoTS3.MainPage" Title="Nuevo contacto" BackgroundColor="#F4F7FB">
+    <ContentPage.Resources><ResourceDictionary>
+        <Style TargetType="Label"><Setter Property="TextColor" Value="#1E293B"/><Setter Property="FontFamily" Value="OpenSansRegular"/><Setter Property="FontSize" Value="14"/></Style>
+        <Style TargetType="Entry"><Setter Property="TextColor" Value="#172033"/><Setter Property="PlaceholderColor" Value="#8994A7"/><Setter Property="BackgroundColor" Value="#F7F9FC"/><Setter Property="FontSize" Value="15"/><Setter Property="HeightRequest" Value="52"/><Setter Property="ClearButtonVisibility" Value="WhileEditing"/></Style>
+        <Style TargetType="Picker"><Setter Property="TextColor" Value="#172033"/><Setter Property="TitleColor" Value="#8994A7"/><Setter Property="BackgroundColor" Value="#F7F9FC"/><Setter Property="FontSize" Value="15"/><Setter Property="HeightRequest" Value="52"/></Style>
+        <Style TargetType="DatePicker"><Setter Property="TextColor" Value="#172033"/><Setter Property="BackgroundColor" Value="#F7F9FC"/><Setter Property="FontSize" Value="15"/><Setter Property="HeightRequest" Value="52"/></Style>
+        <Style TargetType="Button"><Setter Property="BackgroundColor" Value="#225FE5"/><Setter Property="TextColor" Value="White"/><Setter Property="FontAttributes" Value="Bold"/><Setter Property="FontSize" Value="16"/><Setter Property="CornerRadius" Value="14"/><Setter Property="HeightRequest" Value="54"/></Style>
+    </ResourceDictionary></ContentPage.Resources>
+    <ScrollView><VerticalStackLayout Padding="22,20,22,30" Spacing="18">
+        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="14" VerticalOptions="Center"><Image Source="contact_hero.svg" WidthRequest="76" HeightRequest="76" Aspect="AspectFit" SemanticProperties.Description="Ilustración de una tarjeta de contacto"/><VerticalStackLayout Grid.Column="1" Spacing="3" VerticalOptions="Center"><Label Text="CONTACTOS" FontSize="12" FontAttributes="Bold" TextColor="#225FE5"/><Label Text="Nuevo contacto" FontSize="26" FontAttributes="Bold"/><Label Text="Completa los datos para ver el resumen IESS." FontSize="13" TextColor="#667085"/></VerticalStackLayout></Grid>
+        <Border BackgroundColor="White" Stroke="#E5EAF2" StrokeThickness="1" StrokeShape="RoundRectangle 22" Padding="20"><VerticalStackLayout Spacing="13">
+            <Label Text="Identificación" FontAttributes="Bold"/><Picker x:Name="TipoPicker" Title="Selecciona el tipo" SelectedIndexChanged="TipoPicker_SelectedIndexChanged"><Picker.Items><x:String>CI</x:String><x:String>RUC</x:String><x:String>Pasaporte</x:String></Picker.Items></Picker>
+            <Entry x:Name="IdentificacionEntry" Placeholder="Número o pasaporte" MaxLength="20"/>
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="12"><VerticalStackLayout Spacing="7"><Label Text="Nombres" FontAttributes="Bold"/><Entry x:Name="NombresEntry" Placeholder="Nombres" MaxLength="60"/></VerticalStackLayout><VerticalStackLayout Grid.Column="1" Spacing="7"><Label Text="Apellidos" FontAttributes="Bold"/><Entry x:Name="ApellidosEntry" Placeholder="Apellidos" MaxLength="60"/></VerticalStackLayout></Grid>
+            <Label Text="Fecha" FontAttributes="Bold"/><DatePicker x:Name="FechaPicker" Format="dd/MM/yyyy"/>
+            <Label Text="Correo electrónico" FontAttributes="Bold"/><Entry x:Name="CorreoEntry" Placeholder="nombre@correo.com" Keyboard="Email" MaxLength="120"/>
+            <Label Text="Salario mensual (USD)" FontAttributes="Bold"/><Entry x:Name="SalarioEntry" Placeholder="Ej. 850.00" Keyboard="Decimal" MaxLength="12"/>
+            <Label x:Name="ErrorLabel" IsVisible="False" TextColor="#B42318" FontSize="13"/><Button Text="Ver resumen y aporte IESS" Clicked="Continuar_Clicked"/>
+        </VerticalStackLayout></Border>
+        <Label Text="Tus datos se usan solo para generar este resumen." FontSize="12" TextColor="#667085" HorizontalTextAlignment="Center"/>
+    </VerticalStackLayout></ScrollView>
+</ContentPage>
