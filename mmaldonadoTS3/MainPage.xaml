@@ -15,7 +15,7 @@
             <Grid ColumnDefinitions="*,*" ColumnSpacing="12"><VerticalStackLayout Spacing="7"><Label Text="Nombres" FontAttributes="Bold"/><Entry x:Name="NombresEntry" Placeholder="Nombres" MaxLength="60"/></VerticalStackLayout><VerticalStackLayout Grid.Column="1" Spacing="7"><Label Text="Apellidos" FontAttributes="Bold"/><Entry x:Name="ApellidosEntry" Placeholder="Apellidos" MaxLength="60"/></VerticalStackLayout></Grid>
             <Label Text="Fecha" FontAttributes="Bold"/><DatePicker x:Name="FechaPicker" Format="dd/MM/yyyy"/>
             <Label Text="Correo electrónico" FontAttributes="Bold"/><Entry x:Name="CorreoEntry" Placeholder="nombre@correo.com" Keyboard="Email" MaxLength="120"/>
-            <Label Text="Salario mensual (USD)" FontAttributes="Bold"/><Entry x:Name="SalarioEntry" Placeholder="Ej. 850.00" Keyboard="Decimal" MaxLength="12"/>
+            <Label Text="Salario mensual (USD)" FontAttributes="Bold"/><Entry x:Name="SalarioEntry" Placeholder="Ej. 850.00" Keyboard="Numeric" MaxLength="12"/>
             <Label x:Name="ErrorLabel" IsVisible="False" TextColor="#B42318" FontSize="13"/><Button Text="Ver resumen y aporte IESS" Clicked="Continuar_Clicked"/>
         </VerticalStackLayout></Border>
         <Label Text="Tus datos se usan solo para generar este resumen." FontSize="12" TextColor="#667085" HorizontalTextAlignment="Center"/>
